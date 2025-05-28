@@ -10,6 +10,25 @@ async function runFetchReport(){
         console.log(products);
     } catch (error) {
         console.log(error);
+    }}
+
+    try {
+        const reviews = fetchProductReviews()
+        console.log(reviews);
+    } catch (error) {
+        console.log(error);
     }
-}
+
+    try {
+        const report = fetchSalesReport()
+        console.log(report);
+    } catch (error) {
+        console.log(error);
+    }
+    
+
+  
 runFetchReport();
+
+
+

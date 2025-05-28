@@ -13,7 +13,7 @@ export const fetchProductCatalog = (): Promise<{ id: number; name: string; price
     });
 };
 
-export function fetchProductReviews(productId) {
+export function fetchProductReviews(productId: number) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const reviewsFailState = Math.random() < 0.5;
@@ -35,22 +35,22 @@ export function fetchProductReviews(productId) {
   }
 
   
-        function fetchSalesReport() {
-            return new Promise((resolve, reject) => {
-              setTimeout(() => {
-                const shouldFail = Math.random() < 0.5; 
-                if (shouldFail) {
+export function fetchSalesReport() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const reportFailState = Math.random() < 0.5; 
+                if (reportFailState) {
                   reject(new Error('Failed to fetch sales report'));
                   return;
                 }
           
-                const Report = {
-                  totalSales: 15890.75,
-                  unitsSold: 473,
-                  averagePrice: 33.59,
+                const report = {
+                  totalSales: 15000,
+                  unitsSold: 400,
+                  averagePrice: 40,
                 };
           
-                resolve(Report);
+                resolve(report);
               }, 2000); 
             });
           }
