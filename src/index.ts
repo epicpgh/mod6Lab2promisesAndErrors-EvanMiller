@@ -13,7 +13,7 @@ async function runFetchReport(){
     }}
 
     try {
-        const reviews = fetchProductReviews()
+        const reviews = fetchProductReviews
         console.log(reviews);
     } catch (error) {
         console.log(error);
